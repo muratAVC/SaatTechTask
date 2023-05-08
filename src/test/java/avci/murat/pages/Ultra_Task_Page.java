@@ -79,6 +79,12 @@ public class Ultra_Task_Page {
     @FindBy(id = "finish")
     public WebElement finishButton;
 
+    @FindBy(id = "add-to-cart-sauce-labs-fleece-jacket")
+    public WebElement productJacket;
+
+    @FindBy(className = "complete-header")
+    public WebElement ordermesage;
+
 
 
 }

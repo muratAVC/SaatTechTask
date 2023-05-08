@@ -3,6 +3,7 @@ package avci.murat.step_definitions;
 import avci.murat.pages.Ultra_Task_Page;
 import avci.murat.utilities.BrowserTools;
 import avci.murat.utilities.Driver;
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
@@ -61,22 +62,21 @@ public class UltraStepDef {
         switch (arg0) {
             case "Name (A to Z)":
                 actions.sendKeys(Keys.ENTER).perform();
-                BrowserTools.waitFor(3);
+                //BrowserTools.waitFor(3);
                 break;
             case "Name (Z to A)":
                 actions.sendKeys(Keys.DOWN).sendKeys(Keys.ENTER).perform();
-                BrowserTools.waitFor(3);
+                //BrowserTools.waitFor(3);
                 break;
             case "Price (low to high)":
                 actions.sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).sendKeys(Keys.ENTER).perform();
-                BrowserTools.waitFor(3);
+                //BrowserTools.waitFor(3);
                 break;
             case "Price (high to low)":
                 actions.sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).sendKeys(Keys.ENTER).perform();
-                BrowserTools.waitFor(3);
+                //BrowserTools.waitFor(3);
                 break;
         }
-
     }
 
     @And("user can see sort result {string}")
@@ -119,9 +119,6 @@ public class UltraStepDef {
                 System.out.println("azalan fiyat"+itemPrice_Sorted);
                 Assert.assertTrue(itemPrice.equals(itemPrice_Sorted));
                 break;
-
-
-
         }
     }
 
@@ -140,6 +137,8 @@ public class UltraStepDef {
     @Given("user product adding to cart")
     public void user_product_adding_to_cart() {
         ultraTaskPage.addToCart.click();
+        ultraTaskPage.productJacket.click();
+        //BrowserTools.waitFor(3);
     }
     @Given("user can see inside the cart")
     public void user_can_see_inside_the_cart() {
@@ -153,5 +152,50 @@ public class UltraStepDef {
     @Given("remove button change to add to cart button")
     public void remove_button_change_to_add_to_cart_button() {
         Assert.assertFalse(ultraTaskPage.removeButton.isDisplayed());
+    }
+
+    @And("user go to shopping cart")
+    public void userGoToShoppingCart() {
+        ultraTaskPage.shoppingCart.click();
+    }
+
+    @And("user click to checkout button")
+    public void userClickToCheckoutButton() {
+        ultraTaskPage.checkoutButton.click();
+        //BrowserTools.waitFor(3);
+    }
+
+    @And("user write to informations")
+    public void userWriteToInformations() {
+        Faker faker=new Faker();
+        ultraTaskPage.fnameBox.sendKeys(faker.name().firstName());
+        ultraTaskPage.lnameBox.sendKeys(faker.name().lastName());
+        ultraTaskPage.postalCode.sendKeys(faker.address().zipCode());
+        //BrowserTools.waitFor(3);
+        ultraTaskPage.continueButton.click();
+
+    }
+
+    @And("user verify total price")
+    public void userVerifyTotalPrice() {
+        Double totalPrice=0.0;
+        for (WebElement el:ultraTaskPage.cartproductList) {
+            totalPrice+=Double.valueOf(el.getText().substring(1));
+        }
+        String toPri=""+totalPrice;
+        Assert.assertTrue(ultraTaskPage.subTotal.getText().contains(toPri));
+
+    }
+
+    @And("user clikc to continue button")
+    public void userClikcToContinueButton() {
+        //BrowserTools.waitFor(3);
+        ultraTaskPage.finishButton.click();
+    }
+
+    @And("user verify to order mesaage")
+    public void userVerifyToOrderMesaage() {
+        //BrowserTools.waitFor(3);
+        Assert.assertTrue(ultraTaskPage.ordermesage.isDisplayed());
     }
 }

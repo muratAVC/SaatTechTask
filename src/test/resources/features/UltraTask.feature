@@ -48,9 +48,18 @@ Scenario: User can be login and product add to cart
 
 
 
+    @order
   Scenario:User can be login and product add to cart and pay
     Given user add to "standard_user"
     And user add password "secret_sauce"
     And user click to login button
+    And user product adding to cart
+    And user go to shopping cart
+    And user click to checkout button
+    And user write to informations
+    And user verify total price
+    And user clikc to continue button
+    And user verify to order mesaage
+
 
 
