@@ -152,6 +152,6 @@ public class UltraStepDef {
     }
     @Given("remove button change to add to cart button")
     public void remove_button_change_to_add_to_cart_button() {
-        Assert.assertTrue(ultraTaskPage.removeButton.isDisplayed());
+        Assert.assertFalse(ultraTaskPage.removeButton.isDisplayed());
     }
 }

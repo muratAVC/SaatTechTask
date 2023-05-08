@@ -33,9 +33,9 @@ Feature: Ultra task feature
     |standard_user|secret_sauce|Price (high to low)|
 
   @product
-Scenario Outline: User can be login and product add to cart
-    Given user add to "<username>"
-    And user add password "<password>"
+Scenario: User can be login and product add to cart
+    Given user add to "standard_user"
+    And user add password "secret_sauce"
     And user click to login button
     And user click to left menu button
     And user click to reset button
@@ -46,6 +46,11 @@ Scenario Outline: User can be login and product add to cart
     And user can see inside the cart
     And remove button change to add to cart button
 
-  Examples: username and password
-    | username      | password     |
-    | standard_user | secret_sauce |
+
+
+  Scenario:User can be login and product add to cart and pay
+    Given user add to "standard_user"
+    And user add password "secret_sauce"
+    And user click to login button
+
+

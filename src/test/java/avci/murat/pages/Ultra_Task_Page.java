@@ -55,6 +55,30 @@ public class Ultra_Task_Page {
     @FindBy(id = "remove-sauce-labs-backpack")
     public WebElement removeButton;
 
+    @FindBy(id = "checkout")
+    public WebElement checkoutButton;
+
+    @FindBy(id = "first-name")
+    public WebElement fnameBox;
+
+    @FindBy(id = "last-name")
+    public WebElement lnameBox;
+
+    @FindBy(id = "postal-code")
+    public WebElement postalCode;
+
+    @FindBy(id = "continue")
+    public WebElement continueButton;
+
+    @FindBy(className = "inventory_item_price")
+    public List<WebElement> cartproductList;
+
+    @FindBy(className = "summary_subtotal_label")
+    public WebElement subTotal;
+
+    @FindBy(id = "finish")
+    public WebElement finishButton;
+
 
 
 }
