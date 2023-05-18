@@ -32,7 +32,7 @@ Feature: Ultra task feature
     |standard_user|secret_sauce|Price (low to high)|
     |standard_user|secret_sauce|Price (high to low)|
 
-  @product
+  @product @smoke @test1
 Scenario: User can be login and product add to cart
     Given user add to "standard_user"
     And user add password "secret_sauce"
@@ -48,7 +48,7 @@ Scenario: User can be login and product add to cart
 
 
 
-    @order
+    @order @regression @test2
   Scenario:User can be login and product add to cart and pay
     Given user add to "standard_user"
     And user add password "secret_sauce"
