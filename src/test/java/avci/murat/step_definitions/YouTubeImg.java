@@ -32,6 +32,5 @@ public class YouTubeImg {
         String imgPath="C:\\Users\\murat\\OneDrive\\Belgeler\\resim.png";
         BrowserTools.saveImageFromURL(imageURL,imgPath);
     }
-// Mail atma kısmı
 }
 
