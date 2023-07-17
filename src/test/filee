@@ -1,0 +1,41 @@
+{
+  "id": 0,
+  "category": {
+    "id": 0,
+    "name": "string"
+  },
+  "name": "doggie",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 0,
+      "name": "string"
+    }
+  ],
+  "status": "available"
+}
+
+        Map<String, Object> jsonMap = new HashMap<>();
+
+        Map<String, Object> categoryMap = new HashMap<>();
+        categoryMap.put("id", 0);
+        categoryMap.put("name", "string");
+
+        List<String> photoUrls = new ArrayList<>();
+        photoUrls.add("string");
+
+        Map<String, Object> tagMap = new HashMap<>();
+        tagMap.put("id", 0);
+        tagMap.put("name", "string");
+
+        List<Map<String, Object>> tags = new ArrayList<>();
+        tags.add(tagMap);
+
+        jsonMap.put("id", 0);
+        jsonMap.put("category", categoryMap);
+        jsonMap.put("name", "doggie");
+        jsonMap.put("photoUrls", photoUrls);
+        jsonMap.put("tags", tags);
+        jsonMap.put("status", "available");
