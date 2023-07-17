@@ -18,7 +18,8 @@ public class YouTubeImg {
 
     @Given("open browser and go to youtube channel")
     public void openBrowserAndGoToYoutubeChannel() {
-        Driver.getWebDriver().navigate().to("https://www.youtube.com/@PythonSimplified");
+        //Driver.getWebDriver().navigate().to("https://www.youtube.com/@PythonSimplified");
+        Driver.getWebDriver().navigate().to("https://www.youtube.com/@sina5an/videos");
     }
     @When("go to the videos tab")
     public void goToTheVideosTab() {
@@ -28,9 +29,10 @@ public class YouTubeImg {
     @And("find the latest video and get your picture")
     public void findTheLatestVideoAndGetYourPicture() throws IOException {
         //String imageURL=tpage.videoImages.get(0).getAttribute("src");
-        WebElement element=youTubeImgPage.videoImages.get(0);
-        String imageURL= element.getAttribute("src");
-        System.out.println("selam"+imageURL);
+        String imageURL=youTubeImgPage.sinan_img.getAttribute("src");
+        //WebElement element=youTubeImgPage.videoImages.get(0);
+        //String imageURL= element.getAttribute("src");
+        System.out.println("selam-"+imageURL);
         URL imgURL=new URL(imageURL);
         BufferedImage sevaImage= ImageIO.read(imgURL);
         ImageIO.write(sevaImage,"png",new File("\\resim.png"));
