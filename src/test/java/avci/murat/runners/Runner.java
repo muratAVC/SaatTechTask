@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         glue="avci/murat/step_definitions",
         dryRun = false,
         tags = "@Turkiye"
-)
+)//
 
 public class Runner {
 }

@@ -20,7 +20,7 @@ public class TurkiyePage {
 
     @FindBy(id = "tridField")
     public WebElement idNameField;
-
+//
     @FindBy(id = "egpField")
     public WebElement passField;
 

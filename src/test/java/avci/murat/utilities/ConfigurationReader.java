@@ -20,7 +20,7 @@ private static Properties properties;
         throw new RuntimeException(e);
     }
    }
-
+//
    public static String getProperties(String a){
        return properties.getProperty(a);
    }

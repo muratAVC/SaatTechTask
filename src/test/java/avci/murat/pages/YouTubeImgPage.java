@@ -12,7 +12,7 @@ public class YouTubeImgPage {
         PageFactory.initElements(Driver.getWebDriver(),this);
     }
 
-
+//
 
     @FindBy(xpath = "//img[contains(@class,'yt-core-image')]")
     public List<WebElement> videoImages;

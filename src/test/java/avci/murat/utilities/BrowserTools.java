@@ -254,7 +254,7 @@ public class BrowserTools {
         final byte[] screenshot = ((TakesScreenshot) Driver.getWebDriver()).getScreenshotAs(OutputType.BYTES);
         scenario.attach(screenshot,"image/png","screenshot");
     }
-
+//
     public static boolean verifyFileDownloaded(String path){
         File file=new File(path);
         return file.exists();

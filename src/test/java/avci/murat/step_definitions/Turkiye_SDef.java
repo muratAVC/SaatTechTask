@@ -58,6 +58,7 @@ public class Turkiye_SDef {
     }
     @When("Click the Safe Exit button")
     public void click_the_safe_exit_button() {
+        //exitt
         tpage.nameButton.click();
         tpage.safeExit.click();
 

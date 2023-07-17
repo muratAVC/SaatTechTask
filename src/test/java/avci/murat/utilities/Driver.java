@@ -13,7 +13,7 @@ public class Driver {
     private Driver(){}//singelton asarım modeli gereği public değil private olacak
     private static WebDriver webDriver;//singelton asarım modeli gereği public değil private olacak
  //   private static final InheritableThreadLocal<WebDriver> driverPool =new InheritableThreadLocal<>();
-
+//
     public static WebDriver getWebDriver(){
         ChromeOptions options=new ChromeOptions();
         options.addArguments("--lang=en");
