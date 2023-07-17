@@ -8,7 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.File;
+import java.io.*;
+import java.net.URL;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -248,6 +249,18 @@ public class BrowserTools {
 
     public static void waitForPresenceOfElement(By by, long time) {
         new WebDriverWait(Driver.getWebDriver(), Duration.ofSeconds(time)).until(ExpectedConditions.presenceOfElementLocated(by));
+    }
+    public static void saveImageFromURL(String imageURL, String savePath) throws IOException {//img dosyasını verilen yola kaydeder
+        URL url = new URL(imageURL);
+        try (InputStream inputStream = url.openStream();
+             OutputStream outputStream = new FileOutputStream(savePath)) {
+
+            byte[] buffer = new byte[2048];
+            int length;
+            while ((length = inputStream.read(buffer)) != -1) {
+                outputStream.write(buffer, 0, length);
+            }
+        }
     }
 
     public static void screenShoot(Scenario scenario){

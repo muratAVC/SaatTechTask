@@ -16,8 +16,8 @@ public class YouTubeImgPage {
 
     @FindBy(xpath = "//img[contains(@class,'yt-core-image')]")
     public List<WebElement> videoImages;
-//malesef bunların hiçbiri çalışmıyor
-    @FindBy(xpath = "//img[@id='thumbnail']")
+
+    @FindBy (xpath = "//*[@src='https://i.ytimg.com/vi/hebTN9kCPt8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDnvLvR1uJkn38e3Mrr0Rw0sMnZ1Q']")
     public WebElement sinan_img;
 
     @FindBy(id="search")
